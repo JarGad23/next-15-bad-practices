@@ -7,6 +7,7 @@ interface CharacterListProps {
   incrementRequestCount: () => void;
   onLoadTime: (time: number) => void;
 }
+
 export const CharacterList = ({
   status,
   page,
@@ -21,7 +22,6 @@ export const CharacterList = ({
       try {
         const start = performance.now();
         setLoading(true);
-
         incrementRequestCount();
 
         console.log(`Fetching: status=${status}, page=${page}`);
@@ -36,6 +36,8 @@ export const CharacterList = ({
         if (!res.ok) {
           throw new Error("Fetch failed");
         }
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         const data = await res.json();
 

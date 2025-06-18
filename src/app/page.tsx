@@ -24,7 +24,7 @@ export default function HomePage() {
     <main className="p-4 pt-12">
       <DevToolbar loadTime={loadTime} requestCount={requestCount} />
       <h1 className="text-2xl font-bold mb-4">
-        Rick and Morty Characters (Bad Practices v2)
+        Rick and Morty Characters (Bad Practices)
       </h1>
 
       <StatusSelect status={status} onChange={handleStatusChange} />
